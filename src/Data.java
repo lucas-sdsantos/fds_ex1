@@ -32,5 +32,9 @@ public class Data {
     public void setAno(int ano) {
         this.ano = ano;
     }
+
+    public String toString() {
+        return dia + "/" + mes + "/" + ano;
+    }
     
 }

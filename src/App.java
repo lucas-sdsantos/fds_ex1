@@ -7,5 +7,8 @@ public class App {
         System.out.println("Datas em que choveu mais de 90 milimetros");
         consultas.datasEmQueChouveuMaisDe(90)
             .forEach(System.out::println);
+        
+        // padrao strategy para tarefa 3:
+        consultas.diasEmQue().forEach(System.out::println);
     }
 }

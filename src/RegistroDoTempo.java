@@ -22,6 +22,10 @@ public class RegistroDoTempo {
         this.velocidadeDoVento = velocidadeDoVento;
     }
 
+    public Data getData() {
+        return data;
+    }
+    
     public int getDia() {
         return data.getDia();
     }
