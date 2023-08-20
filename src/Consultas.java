@@ -43,7 +43,15 @@ public class Consultas implements IStrategy{
             .toList();
     }
 
-    public void alteraConsultaPadrao(Predicate<RegistroDoTempo> consulta) {
+    public List<Data> diasEmQue(Predicate<RegistroDoTempo> consulta) {
+        return registros
+            .stream()
+            .filter(consulta)
+            .map(r->r.getData())
+            .toList();
+    }
 
+    public void alteraConsultaPadrao(Predicate<RegistroDoTempo> consulta) {
+        this.consulta = consulta;
     }
 }
