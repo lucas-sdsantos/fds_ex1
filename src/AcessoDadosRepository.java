@@ -4,21 +4,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 
 public class AcessoDadosRepository {
 
-    private List<RegistroDoTempo> registros;
-    private String nArq;
+    private static List<RegistroDoTempo> registros = new ArrayList<>();
+    private static String nArq = "poa_temps.txt";
 
-    public AcessoDadosRepository (){
-        registros = new LinkedList<>();
-        this.nArq = "poa_temps.txt";
-    } 
-
-    public void carregaDados(){
+    public static void carregaDados(){
         String currDir = Paths.get("").toAbsolutePath().toString();
         // Monta o nome do arquivo
         String nomeCompleto = currDir+"/"+nArq;
@@ -55,9 +51,30 @@ public class AcessoDadosRepository {
          }catch (IOException x){
              System.err.format("Erro de E/S: %s%n", x);
          }
-    } 
+    }
 
-    public List<RegistroDoTempo> getRegistros() {
+    public static List<RegistroDoTempo> getAll() {
         return registros;
     }
+
+    public RegistroDoTempo getRegistro() {
+        return null;
+    }
+
+    public boolean existe(int dia, int mes, int ano) {
+        return false;
+    }
+
+    // public void delRegistro(int dia, int mes, int ano) {
+
+    // }
+
+    // public void addRegistro(RegistroDoTempo umRegistro) {
+        
+    // }
+
+    // public void upDate(int dia, int mes, int ano, RegistroDoTempo umRegistro) {
+
+    // }
+    
 }
