@@ -9,12 +9,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Consultas {
+    private AcessoDadosRepository dados;
     private List<RegistroDoTempo> registros;
-    private String nArq;
 
     public Consultas(){
+        dados = new AcessoDadosRepository();
         registros = new LinkedList<>();
-        registros = AcessoDadosRepository.getAll();
+        registros = dados.getAll();
     }
 
     // public void carregaDados(){

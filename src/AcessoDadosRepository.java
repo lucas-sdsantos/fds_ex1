@@ -11,10 +11,16 @@ import java.util.List;
 
 public class AcessoDadosRepository {
 
-    private static List<RegistroDoTempo> registros = new ArrayList<>();
-    private static String nArq = "poa_temps.txt";
+    private List<RegistroDoTempo> registros;
+    private String nArq;
 
-    public static void carregaDados(){
+    public AcessoDadosRepository(){
+        registros = new LinkedList<>();
+        nArq = "poa_temps.txt";
+        carregaDados();
+    }
+
+    public void carregaDados(){
         String currDir = Paths.get("").toAbsolutePath().toString();
         // Monta o nome do arquivo
         String nomeCompleto = currDir+"/"+nArq;
@@ -53,7 +59,7 @@ public class AcessoDadosRepository {
          }
     }
 
-    public static List<RegistroDoTempo> getAll() {
+    public List<RegistroDoTempo> getAll() {
         return registros;
     }
 

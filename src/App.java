@@ -1,6 +1,5 @@
 public class App {
     public static void main(String[] args) {
-        AcessoDadosRepository.carregaDados();
         Consultas consultas = new Consultas();
         //Consultas.carregaDados();
         System.out.println("Dia em que mais choveu no ano de 1980: ");
