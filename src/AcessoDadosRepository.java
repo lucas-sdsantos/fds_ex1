@@ -4,7 +4,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,6 +41,7 @@ public class AcessoDadosRepository {
                 int dia = Integer.parseInt(data[0]);
                 int mes = Integer.parseInt(data[1]);
                 int ano = Integer.parseInt(data[2]);
+                Data dma = new Data(dia, mes, ano);
                 // Trata demais dados
                 double precipitacao = Double.parseDouble(dados[1]);
                 double tempMaxima = Double.parseDouble(dados[2]);
@@ -51,7 +51,7 @@ public class AcessoDadosRepository {
                 double umidadeRelativaDoAr = Double.parseDouble(dados[6]);
                 double velocidadeDoVento = Double.parseDouble(dados[7]);
                 // Cria um registro e insere na lista
-                RegistroDoTempo reg = new RegistroDoTempo(dia, mes, ano, precipitacao, tempMaxima, tempMinima, horasInsolacao, temperaturaMedia, umidadeRelativaDoAr, velocidadeDoVento);
+                RegistroDoTempo reg = new RegistroDoTempo(dma, precipitacao, tempMaxima, tempMinima, horasInsolacao, temperaturaMedia, umidadeRelativaDoAr, velocidadeDoVento);
                 registros.add(reg);
             }
          }catch (IOException x){
